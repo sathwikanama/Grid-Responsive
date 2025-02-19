@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-Layout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            min-width: 100vw;
+            max-width: 100vw;
+            min-height: 100vh;
+            max-height: 100vh;
+            background: #8E0E00;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #1F1C18, #8E0E00);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            overflow: scroll;
+
+
+        }
+        .main {
+            display: grid;
+            grid-template-columns: 200px 100px 300px 200px 100px 100px 200px;
+            grid-template-rows: 200px 200px 200px;
+            background: #8E0E00;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #1F1C18, #8E0E00);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+        }
+
+        .box {
+            background-color: aquamarine;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .box-1 {
+            grid-area: 1/1/2/3;
+            background: #00c6ff;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #0072ff, #00c6ff);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 25px;
+            box-shadow: -2px 2px 2px rgb(83, 168, 201);
+        }
+
+        .box-2 {
+            grid-area: 1/3/2/6;
+            background: #F09819;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #EDDE5D, #F09819);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #EDDE5D, #F09819);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 25px;
+            box-shadow: -2px 2px 2px orange;
+
+        }
+
+        .box-3 {
+            grid-area: 1/6/2/8;
+            background: #00c6ff;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #0072ff, #00c6ff);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 55px;
+            box-shadow: -2px 2px 2px rgb(108, 178, 206);
+        }
+
+        .box-4 {
+            grid-area: 2/1/3/4;
+            background: #FF512F;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #F09819, #FF512F);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #F09819, #FF512F);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            box-shadow: -2px 2px 1px orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 45px;
+
+        }
+
+        .box-5 {
+            grid-area: 2/4/3/8;
+            background: #56CCF2;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2F80ED, #56CCF2);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 25px;
+            box-shadow: -2px 2px 2px orange;
+        }
+
+        .box-6 {
+            grid-area: 3/1/4/2;
+            background: #005C97;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #363795, #005C97);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #363795, #005C97);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 55px;
+            box-shadow: -2px 2px 2px #5e60e9;
+        }
+
+        .box-7 {
+            grid-area: 3/2/4/5;
+            background: #D38312;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #A83279, #D38312);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #A83279, #D38312);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: -1px 1px 1px orange;
+        }
+
+        .box-8 {
+            grid-area: 3/5/4/7;
+            background: #c94b4b;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #4b134f, #c94b4b);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 50px;
+            box-shadow: -1px 1px 1px #c94b4b;
+
+        }
+
+        .box-9 {
+            grid-area: 3/7/4/8;
+            background: #c94b4b;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #4b134f, #c94b4b);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 50px;
+            box-shadow: -1px 1px 1px #c94b4b;
+        }
+
+        p {
+            font-size: 15px;
+            padding: 5px;
+        }
+
+        .sub {
+            width: 75px;
+            
+            background-color: white;
+            color: orange;
+            padding: 5px;
+
+        }
+
+        .sub1 {
+            width: 60px;
+            background-color: white;
+            color: skyblue;
+            padding: 5px;
+
+        }
+
+        .img1 {
+            width: 120px;
+            height: 120px;
+
+        }
+
+        .img2 {
+            width: 150px;
+            margin-left: 10px;
+        }
+
+        .img3 {
+            width: 150px;
+            height: 150px;
+        }
+        .virat{
+            display: flex;
+            align-items: center;
+            text-align: left;
+
+        }
+        .rat{
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+        @media(max-width:1000px){
+            .main{
+                grid-template-columns: 200px 200px 200px;
+                grid-template-rows: 200px 200px 200px;
+            }
+            .box{
+                flex-direction: column-reverse;
+            }
+            .box-1{
+                grid-area: 1/1/2/2;
+            }
+            .box-2{
+                grid-area: 1/2/2/3;
+            }
+            .box-3{
+                grid-area: 1/3/2/4;
+                flex-direction: column;
+            }
+            .box-4{
+                grid-area: 2/1/3/2;
+                
+                
+            }
+            .box-5{
+                grid-area: 2/2/3/3;
+                
+                
+            }
+            .box-6{
+                grid-area: 2/3/3/4;
+                flex-direction: column;
+            }
+            .box-7{
+                grid-area: 3/1/4/2;
+                flex-direction: column;
+                padding: 3px;
+            }
+            .box-8{
+                grid-area: 3/2/4/3;
+                flex-direction: column;
+            }
+            .box-9{
+                grid-area: 3/3/4/4;
+                flex-direction: column;
+            }
+            .virat{
+                width: 60%;
+                height: 35%;
+
+            }
+            .text{
+                width: 80%;
+                height: 30%;
+                font-size: 10px;
+            }
+            .rat{
+                width: 80%;
+                height: 30%;
+
+            }
+            .text2{
+                width: 80%;
+                height: 30%;
+                font-size: 10px;
+
+            }
+            .sub{
+                font-size: 10px;
+                width: 50px;
+            }
+            .sub1{
+                font-size: 10px;
+                width: 45px;
+            }
+            p{
+                font-size: 10px;
+            }
+            .img2{
+                width: 100px;
+                height: 100px;
+                padding-left: 30px;
+            }
+            .img3{
+                width: 100px;
+                height: 100px;
+                padding-left: 30px;
+            }
+            h4{
+                font-size: 15px;
+            }
+            h6{
+                font-size: 20px;
+            }
+        }
+        @media(max-width:650px){
+            .main{
+                grid-template-columns: 200px 200px;
+                grid-template-rows: 200px 200px 200px 200px;
+            }
+            .box{
+                flex-direction: column-reverse;
+            }
+            .box-1{
+                grid-area: 1/1/2/2;
+                flex-direction: column;
+            }
+            .box-2{
+                grid-area: 1/2/2/3;
+            }
+            .box-3{
+                grid-area: 2/1/3/2;
+                flex-direction: column;
+            }
+            .box-4{
+                grid-area: 2/2/3/3;
+            }
+            .box-5{
+                grid-area: 3/1/4/2;
+                
+            }
+            .box-6{
+                grid-area: 3/2/4/3;
+                flex-direction: column;
+            }
+            .box-7{
+                grid-area: 4/1/5/2;
+                flex-direction: column;
+            }
+            .box-8{
+                grid-area: 4/2/5/3;
+                flex-direction: column;
+            }
+            .box-9{
+                grid-area: 4/2/5/3;
+                flex-direction: column;
+                display: none;
+            }
+            .virat{
+                width: 60%;
+                height: 35%;
+
+            }
+            .text{
+                width: 80%;
+                height: 30%;
+                font-size: 10px;
+            }
+            .rat{
+                width: 80%;
+                height: 30%;
+
+            }
+            .text2{
+                width: 80%;
+                height: 30%;
+                font-size: 10px;
+
+            }
+            .sub{
+                font-size: 10px;
+                width: 50px;
+            }
+            .sub1{
+                font-size: 10px;
+                width: 45px;
+            }
+            p{
+                font-size: 10px;
+            }
+            .img2{
+                width: 100px;
+                height: 100px;
+                padding-left: 30px;
+            }
+            .img3{
+                width: 100px;
+                height: 100px;
+                padding-left: 30px;
+            }
+            h4{
+                font-size: 15px;
+            }
+            h6{
+                font-size: 20px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="box box-1">
+                <h2>1260</h2>
+                <p>Sixes</p>
+            </div>
+            <div class="box box-2">
+                <p>Winners</p>
+                <h4><b>CHENNAI SUPER KINGS</b></h4>
+                <img src="1.png" class="img1">
+            </div>
+            <div class="box box-3">
+                <h5>14</h5>
+                <p>Hundreds</p>
+            </div>
+            <div class="box box-4">
+                <div class="virat"><img src="2.png" class="img2"></div>
+                <div class="text"><p class="sub">OrangeCap</p>
+                    <h6><b>Virat Kohil</b></h6>
+                    <p>Total Runs - 741</p>
+                    <p>Strike Rate - 154.7</p>
+                    <p> Matches  - 15</p>
+                </div>
+            </div>
+            <div class="box box-5">
+                <div class="rat"><img src="33.png" class="img3"></div>
+                <div class="text2"> <p class="sub1">FairPlay</p>
+                    <h7><b>Sunrisers Hyderabad</b></h7>
+                    <p><b>Points - 173</b></p></div>
+            </div>
+            <div class="box box-6">
+                <i class="fa-solid fa-image pics"></i>
+                <p>Pics</p>
+            </div>
+            <div class="box box-7">
+                <h8><b>Interesting Facts</b></h8>
+                <p>"Kolkata Knight Riders crowned champions for the third time,having previously won in the 2012 , 2014
+                </p>
+            </div>
+            <div class="box box-8">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <p>Match Reports</p>
+            </div>
+            <div class="box box-9">
+                <i class="fa-regular fa-circle-play"></i>
+                <p>Highlights</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
